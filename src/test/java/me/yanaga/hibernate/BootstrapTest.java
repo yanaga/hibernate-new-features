@@ -13,6 +13,7 @@ import org.hibernate.query.Query;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class BootstrapTest {
@@ -43,7 +44,7 @@ public class BootstrapTest {
             session.persist(edson);
             Address marieta = new Address("Marieta");
             session.persist(marieta);
-            edson.getAddresses().add(marieta);
+            edson.setAddresses(Arrays.asList(marieta));
 
             marieta.getPerson().getName();
         }
